@@ -8,16 +8,14 @@
       	
       	
         var mapOptions = {
-          center: new google.maps.LatLng(42.361937,-71.090276),
+          center: new google.maps.LatLng(40.807979,-73.963137),
           zoom: 18,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.SATELLITE
         };
         map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-		pining(42.361937,-71.090276,"Stata Center","<h4>Stata Center</h4><h5>- Massachusetts Institute of Technology</h4><a id='stata-get' href='#' onclick='getDirection();'>Get Inside Direction</a>");
-		pining(42.361303,-71.091864,"Fairchild Building","<h4>Fairchild Building</h4><h5>- Massachusetts Institute of Technology</h4><a id='stata-get' href='#' onclick='getDirection();'>Get Inside Direction</a>");
-	    pining(42.360054,-71.089777,"Dreyfus Building","<h4>Dreyfus Building</h4><h5>- Massachusetts Institute of Technology</h4><a id='stata-get' href='#' onclick='getDirection();'>Get Inside Direction</a>");
-		pining(42.360308,-71.089308,"Green Building","<h4>Green Building</h4><h5>- Massachusetts Institute of Technology</h4><a id='stata-get' href='#' onclick='getDirection();'>Get Inside Direction</a>");
+		pining(40.807979,-73.963137,"Columbia University","<h4>Columbia University</h4><h5>- Columbia University</h4><a id='stata-get' href='#' onclick=''>Get Inside Direction</a>",'http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+		pining(40.907979,-73.863137,"Columbia University","<h4>Columbia University</h4><h5>- Columbia University</h4><a id='stata-get' href='#' onclick=''>Get Inside Direction</a>",'http://maps.google.com/mapfiles/ms/icons/green-dot.png');
       }
       
       
@@ -31,29 +29,32 @@
 	            map: map,
 	            position: results[0].geometry.location
 	        });
-	        alert('(lng,lat): '+ [results[0].geometry.location.lng(),results[0].geometry.location.lat()]);
+//	        alert('(lng,lat): '+ [results[0].geometry.location.lng(),results[0].geometry.location.lat()]);
 	        getNowCoordinate(address,[results[0].geometry.location.lng(),results[0].geometry.location.lat()]);
 	        $("#current-addr").html("Current Address: "+NowAddress);
-//	        return [results[0].geometry.location.lng(),results[0].geometry.location.lat()];
 	      } else {
 	        alert("Geocode was not successful for the following reason: " + status);
 	      }
 	    });
 	  }
   
-  function pining(lat,lng,description,contentString){
+  function pining(lat,lng,description,contentString,iconPath){
   	var myLatlng = new google.maps.LatLng(lat,lng);
 
 	var infowindow = new google.maps.InfoWindow({
     	content: contentString
 		});
 
-	var marker = new google.maps.Marker({
-    	position: myLatlng,
-    	map: map,
-    	title: description
-		});
+  	var marker = new google.maps.Marker({ 
+        position: myLatlng, 
+        map: map, 
+        flat: true, 
+        title: description, 
+     });
+		iconFile = iconPath; 
+		marker.setIcon(iconFile)
 
+    // The function after click
 	google.maps.event.addListener(marker, 'click', function() {
   		infowindow.open(map,marker);
 		});
