@@ -7,7 +7,6 @@ body {
 	padding:10px;
 	width:1020px;
 	height:605px;	
-	background-image: url(../img/background-light.png);
 	border-radius: 3px;	
 /*	display:none;*/
 }
@@ -17,4 +16,43 @@ body {
 	height:600px;
 	margin:0 auto;
 	color:black;
+}
+.mapitem{
+	padding-left:20px;
+	position:relative;
+	width:376px;
+	height:133px;
+	overflow-x:hidden;	
+	background-color:red;
+}
+.mapitem-left{
+	float:left;
+	position:relative;
+	width:220px;
+	height:128px;
+}
+.mapitem-right{
+	float:left;
+	position:relative;
+	width:128px;
+	height:128px;
+}
+.mapitem-img{
+	width:128px;
+	height:128px;
+}
+.mapitem-tweet{
+	font-size:10px;
+}
+.mapitem-time{
+	padding:0;
+	font-size:8px;
+}
+.mapitem-line{
+	width:191px;
+	height:1px;
+}
+.mapitem-title{
+	margin-top:0px;
+	margin-bottom:-10px;
 }

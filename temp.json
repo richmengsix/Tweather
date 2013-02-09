@@ -1,0 +1,24 @@
+{
+  "Completed_in": 0.062,
+  "max_id": 299668866261450750,
+  "max_id_str": "299668866261450752",
+  "next_page": "?page=2&max_id=299668866261450752&q=until%3A2013-02-08&geocode=40.832515%2C-73.959961%2C10km&rpp=100",
+  "page": 1,
+  "query": "until%3A2013-02-08",
+  "refresh_url": "?since_id=299668866261450752&q=until%3A2013-02-08&geocode=40.832515%2C-73.959961%2C10km",
+  "results":  [
+
+{"created_at": "Sat, 09 Feb 2013 03:55:38 +0000",
+ "from_user": "daf.nei",
+ "geo": {"coordinates": [40.687333000000002, -73.959999999999994],
+          "type": "Point"},
+ "text": "A blurry peek at #nemo: neighbor's balcony, street #lights #trees #snow @ Brooklyn http://t.co/f8JOvcDI",
+ "weather": "snowy"},
+{"created_at": "Sat, 09 Feb 2013 03:55:53 +0000",
+ "from_user": "Mallory Shelbourne",
+ "geo": {"coordinates": [40.721544999999999, -73.988842000000005],
+          "type": "Point"},
+ "text": "Meatballs in the blizzard. @cdmorisseau @vjaneo @travgentile and James. @ The Meatball Shop http://t.co/fkSWWTKA",
+ "weather": "snowy"
+}]
+}
